@@ -15,5 +15,6 @@ libraryDependencies += ws
 libraryDependencies += "org.mongodb.morphia" % "morphia" % "1.3.2"
 libraryDependencies += "com.auth0" % "java-jwt" % "3.3.0"
 libraryDependencies += "de.flapdoodle.embed" % "de.flapdoodle.embed.mongo" % "2.0.3" % Test
+libraryDependencies += "org.mockito" % "mockito-core" % "2.10.0" % Test
 
 javaOptions in Test ++= Seq("-Dlogger.resource=logback-test.xml")
