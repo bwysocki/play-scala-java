@@ -4,3 +4,14 @@
 /project/target
 /project/project
 /logs
+/bin/
+.DS_Store
+.cache-main
+.cache-tests
+.classpath
+.project
+.settings/
+data/*
+data
+svc
+svc/*

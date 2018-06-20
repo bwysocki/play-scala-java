@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package jwt;
+package com.theguardian.soulmates.jwt;
 
 import play.libs.F;
 

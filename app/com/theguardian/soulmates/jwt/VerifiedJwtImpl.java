@@ -22,14 +22,54 @@
  * SOFTWARE.
  */
 
-package jwt;
+package com.theguardian.soulmates.jwt;
 
-import play.libs.F;
-import play.mvc.Http;
-import play.mvc.Result;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import play.libs.Json;
 
-import java.util.function.Function;
+import java.util.Date;
 
-public interface JwtControllerHelper {
-    Result verify(Http.Request request, Function<F.Either<JwtValidator.Error, VerifiedJwt>, Result> f);
+public class VerifiedJwtImpl implements VerifiedJwt {
+    private String header;
+    private String payload;
+    private String issuer;
+    private String userId;
+    private Date expiresAt;
+
+    public VerifiedJwtImpl(DecodedJWT decodedJWT) {
+        this.header = decodedJWT.getHeader();
+        this.payload = decodedJWT.getPayload();
+        this.issuer = decodedJWT.getIssuer();
+        this.expiresAt = decodedJWT.getExpiresAt();
+        this.userId = decodedJWT.getClaim("user_id").asString();
+    }
+
+    @Override
+    public String getHeader() {
+        return header;
+    }
+
+    @Override
+    public String getPayload() {
+        return payload;
+    }
+
+    @Override
+    public String getIssuer() {
+        return issuer;
+    }
+
+    @Override
+    public Date getExpiresAt() {
+        return expiresAt;
+    }
+    @Override
+    public String toString() {
+        return Json.toJson(this).toString();
+    }
+
+	@Override
+	public String getUserId() {
+		return userId;
+	}
 }

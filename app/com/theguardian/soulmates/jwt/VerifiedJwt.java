@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package jwt;
+package com.theguardian.soulmates.jwt;
 
 import java.util.Date;
 
@@ -31,4 +31,5 @@ public interface VerifiedJwt {
     String getPayload();
     String getIssuer();
     Date getExpiresAt();
+    String getUserId();
 }

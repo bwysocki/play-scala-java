@@ -1,4 +1,4 @@
-import jwt.filter.JwtFilter;
+package com.theguardian.soulmates.config;
 import play.Environment;
 import play.api.http.EnabledFilters;
 import play.filters.cors.CORSFilter;
@@ -6,6 +6,9 @@ import play.http.DefaultHttpFilters;
 import play.mvc.EssentialFilter;
 
 import javax.inject.Inject;
+
+import com.theguardian.soulmates.jwt.filter.JwtFilter;
+
 import java.util.ArrayList;
 import java.util.List;
 

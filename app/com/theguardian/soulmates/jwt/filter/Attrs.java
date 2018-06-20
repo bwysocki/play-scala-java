@@ -1,6 +1,7 @@
-package jwt.filter;
+package com.theguardian.soulmates.jwt.filter;
 
-import jwt.VerifiedJwt;
+import com.theguardian.soulmates.jwt.VerifiedJwt;
+
 import play.libs.typedmap.TypedKey;
 
 public class Attrs {
